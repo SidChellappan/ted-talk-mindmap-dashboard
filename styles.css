@@ -378,6 +378,10 @@ button {
   z-index: 10;
 }
 
+.focus-overlay[hidden] {
+  display: none;
+}
+
 .focus-card {
   position: relative;
   width: min(760px, 100%);
