@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Who Do You Call? | TED Talk Mindmap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Talk controls">
+        <div class="brand-block">
+          <p class="kicker">TED Talk Dashboard</p>
+          <h1>Who Do You Call?</h1>
+          <p class="thesis">Out of 50 possible people, who are the 3 most worth calling today?</p>
+        </div>
+
+        <div class="timer-panel">
+          <div>
+            <span class="label">Practice timer</span>
+            <strong id="timer">00:00</strong>
+          </div>
+          <div class="timer-actions">
+            <button class="icon-button" id="timerToggle" aria-label="Start timer" title="Start timer">
+              <i data-lucide="play"></i>
+            </button>
+            <button class="icon-button" id="timerReset" aria-label="Reset timer" title="Reset timer">
+              <i data-lucide="rotate-ccw"></i>
+            </button>
+          </div>
+        </div>
+
+        <nav class="slide-list" id="slideList" aria-label="Slides"></nav>
+
+        <div class="coach-panel">
+          <span class="label">Rehearsal focus</span>
+          <ul>
+            <li>Open with the 50-to-3 choice.</li>
+            <li>Make every technical term feel everyday.</li>
+            <li>Return to human judgment at the end.</li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <div>
+            <p class="kicker">Interactive mindmap</p>
+            <h2>Talk flow at a glance</h2>
+          </div>
+          <div class="top-actions">
+            <button id="prevSlide" class="tool-button"><i data-lucide="arrow-left"></i><span>Back</span></button>
+            <button id="nextSlide" class="tool-button primary"><span>Next</span><i data-lucide="arrow-right"></i></button>
+          </div>
+        </header>
+
+        <section class="workspace">
+          <div class="mindmap-wrap" aria-label="Mindmap canvas">
+            <svg id="mindmap" viewBox="0 0 980 620" role="img" aria-labelledby="mindmapTitle">
+              <title id="mindmapTitle">Mindmap for Who Do You Call TED talk</title>
+            </svg>
+          </div>
+
+          <aside class="detail-panel" aria-live="polite">
+            <div class="slide-meta">
+              <span id="slideNumber">Slide 1</span>
+              <span id="slideType">Hook</span>
+            </div>
+            <h3 id="slideTitle">Who do you call?</h3>
+            <p id="slidePurpose"></p>
+
+            <div class="prompt-block">
+              <span class="label">Memory anchor</span>
+              <p id="memoryAnchor"></p>
+            </div>
+
+            <div class="prompt-block">
+              <span class="label">Say this clearly</span>
+              <p id="keyLine"></p>
+            </div>
+
+            <div class="prompt-block">
+              <span class="label">Speaker beats</span>
+              <ul id="speakerBeats"></ul>
+            </div>
+
+            <div class="detail-actions">
+              <button id="focusMode" class="tool-button"><i data-lucide="maximize-2"></i><span>Focus</span></button>
+              <button id="copyCue" class="tool-button"><i data-lucide="clipboard"></i><span>Copy cue</span></button>
+            </div>
+          </aside>
+        </section>
+
+        <section class="practice-strip" aria-label="Practice path">
+          <div class="path-card">
+            <span class="label">Opening</span>
+            <strong>50 people. 3 calls.</strong>
+            <p>Create the stakes immediately.</p>
+          </div>
+          <div class="path-card">
+            <span class="label">Middle</span>
+            <strong>Baseline vs AI</strong>
+            <p>Compare the obvious rule with Q-learning.</p>
+          </div>
+          <div class="path-card">
+            <span class="label">Close</span>
+            <strong>Test judgment safely</strong>
+            <p>AI helps humans test decisions before consequences.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="focus-overlay" id="focusOverlay" hidden>
+      <div class="focus-card">
+        <button class="icon-button close-focus" id="closeFocus" aria-label="Close focus mode" title="Close">
+          <i data-lucide="x"></i>
+        </button>
+        <span id="focusNumber" class="label"></span>
+        <h2 id="focusTitle"></h2>
+        <p id="focusLine"></p>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
